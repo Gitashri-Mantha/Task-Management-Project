@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./styles.css" />
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">  
+    <title>TaskY</title>
+</head>
+<body style="background-color: #ebf3ff" onload="loadExistingCards()">
+  <!-- Modal -->
+<div class="modal fade" id="newTask" tabindex="-1" aria-labelledby="newTaskLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newTaskLabel">Add new task</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="imageURL" class="form-label">Image URL</label>
+            <input type="URL" class="form-control" id="imageURL" placeholder="http://image.com/image.jpg">
+            
+          </div>
+          <div class="mb-3">
+            <label for="taskTitle" class="form-label">Task title</label>
+            <input type="text" class="form-control" id="taskTitle" placeholder="web development">
+          </div>
+          <div class="mb-3 form-check">
+            <label for="taskType" class="form-label">Task type</label>
+            <input type="text" class="form-control" id="taskType" placeholder="practice" >
+          </div>
+            
+          <div class="mb-3">
+            <label for="taskDescription" class="form-label">Task description</label>
+            <textarea id="taskDescription" class="form-control" rows=3 ></textarea>
+          </div> 
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="addNewCard()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+        <div class="container-fluid">
+          <a href="#" class="fs-3 $primary" > TaskY</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+          </ul>
+          <button class="btn btn-primary ml-auto " data-bs-toggle="modal" data-bs-target="#newTask">
+            <i class="far fa-plus"></i>Add New
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main class="container"> 
+      <section class="row justify-content-center ml-5">
+        <div class="col-md-3 col-lg-6">
+          <div class="input-group flex-nowrap m-3">
+            
+            <input type="search" class="form-control shadow " placeholder="Search task" aria-label="Search task">
+            <span class="input-group-text" id="addon-wrapping"><i class="far fa-search"></i></span>
+          </div>
+        </div>
+      </section>
+      <!--task container-->
+      <section class="task__container row">
+        
+      </section>
+
+    </main>
+  
+
+
+
+
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+<script src="index.js"></script>   
+</body>
+</html>
